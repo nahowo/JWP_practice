@@ -19,19 +19,14 @@ public class RequestHandler extends Thread {
 
         try (InputStream in = connection.getInputStream(); OutputStream out = connection.getOutputStream()) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
-            String line = "";
-            String url = "";
-            int lineNumber = 1;
+            String line = bufferedReader.readLine();
+            String url = splitUrl(line);
+            log.info("url: " + url);
             while (!"".equals(line = bufferedReader.readLine())) {
-                log.info(line);
-                if (line != null && lineNumber == 1) {
-                    url = splitUrl(line);
-                    log.info("url: " + url);
-                }
-                lineNumber ++;
                 if (line == null) {
                     return;
                 }
+                log.info(line);
             }
             DataOutputStream dos = new DataOutputStream(out);
             byte[] body = Files.readAllBytes(new File("./webapp/" + url).toPath());

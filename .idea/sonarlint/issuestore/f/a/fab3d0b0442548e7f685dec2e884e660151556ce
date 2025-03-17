@@ -1,14 +1,14 @@
 
-w,Web:MouseEventWithoutKeyboardEquivalentCheckD"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(íÑ
-s	Web:S6819D"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(íÑ
-|,Web:MouseEventWithoutKeyboardEquivalentCheckE"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.( ‡ã”şÿÿÿÿ
-x	Web:S6819E"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.( ‡ã”şÿÿÿÿ
-NWeb:AvoidCommentedOutCodeCheckF"Remove this commented out code.(‹òá¤ıÿÿÿÿ
-|,Web:MouseEventWithoutKeyboardEquivalentCheckJ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(ëüïÙûÿÿÿÿ
-x	Web:S6819J"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(ëüïÙûÿÿÿÿ
-|,Web:MouseEventWithoutKeyboardEquivalentCheckK"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Œİş“ùÿÿÿÿ
-x	Web:S6819K"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Œİş“ùÿÿÿÿ
-x,Web:MouseEventWithoutKeyboardEquivalentCheckˆ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Ÿñã·
-t	Web:S6819ˆ"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Ÿñã·
-OWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(‹òá¤ıÿÿÿÿ
-OWeb:AvoidCommentedOutCodeCheck³"Remove this commented out code.(‹òá¤ıÿÿÿÿ
+,Web:MouseEventWithoutKeyboardEquivalentCheckD"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(íÑJ$e7460b36-b49e-490a-bf07-90bb85101cb3
+™	Web:S6819D"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(íÑJ$0091304a-6445-4052-b4e6-efef38a9e4d5
+¢,Web:MouseEventWithoutKeyboardEquivalentCheckE"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.( ‡ã”şÿÿÿÿJ$29a39473-1310-4da1-b2f7-0fd459e3ec71
+	Web:S6819E"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.( ‡ã”şÿÿÿÿJ$c94a1d8b-0b74-48ae-807e-29bf2d678e94
+tWeb:AvoidCommentedOutCodeCheckF"Remove this commented out code.(‹òá¤ıÿÿÿÿJ$89cf1bdc-bbd0-4b9a-ba6f-c6f114630fb6
+¢,Web:MouseEventWithoutKeyboardEquivalentCheckJ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(ëüïÙûÿÿÿÿJ$a7b30c55-08c8-4454-bf10-25fa86c27e09
+	Web:S6819J"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(ëüïÙûÿÿÿÿJ$e0c07c00-5254-4b7c-b2cf-daf0d3445658
+¢,Web:MouseEventWithoutKeyboardEquivalentCheckK"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Œİş“ùÿÿÿÿJ$2e931e44-e0ae-407f-ae75-47010f61d4a5
+	Web:S6819K"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Œİş“ùÿÿÿÿJ$eef80a6c-c1ac-49c4-8e3f-d741e43f14bf
+,Web:MouseEventWithoutKeyboardEquivalentCheckˆ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Ÿñã·J$18c67d83-8afb-4b84-80ad-23c65f3e340b
+š	Web:S6819ˆ"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Ÿñã·J$7a749e99-5c54-4218-ab8b-c9d3aff25e4f
+uWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(‹òá¤ıÿÿÿÿJ$af4c6d7e-0f7f-4aec-8b93-7454892928cf
+uWeb:AvoidCommentedOutCodeCheck³"Remove this commented out code.(‹òá¤ıÿÿÿÿJ$9b6e9e63-74f5-4f3a-b827-85ee11fb3513
