@@ -1,0 +1,14 @@
+
+w,Web:MouseEventWithoutKeyboardEquivalentCheckD"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(íÑ
+s	Web:S6819D"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(íÑ
+|,Web:MouseEventWithoutKeyboardEquivalentCheckE"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.( ‡ã”şÿÿÿÿ
+x	Web:S6819E"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.( ‡ã”şÿÿÿÿ
+NWeb:AvoidCommentedOutCodeCheckF"Remove this commented out code.(‹òá¤ıÿÿÿÿ
+|,Web:MouseEventWithoutKeyboardEquivalentCheckJ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(ëüïÙûÿÿÿÿ
+x	Web:S6819J"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(ëüïÙûÿÿÿÿ
+|,Web:MouseEventWithoutKeyboardEquivalentCheckK"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Œİş“ùÿÿÿÿ
+x	Web:S6819K"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Œİş“ùÿÿÿÿ
+x,Web:MouseEventWithoutKeyboardEquivalentCheckˆ"?Add a 'onKeyPress|onKeyDown|onKeyUp' attribute to this <a> tag.(Ÿñã·
+t	Web:S6819ˆ"^Use <button> or <input> instead of the button role to ensure accessibility across all devices.(Ÿñã·
+OWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(‹òá¤ıÿÿÿÿ
+OWeb:AvoidCommentedOutCodeCheck³"Remove this commented out code.(‹òá¤ıÿÿÿÿ
