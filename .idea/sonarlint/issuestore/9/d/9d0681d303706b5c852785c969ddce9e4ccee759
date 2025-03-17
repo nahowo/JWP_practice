@@ -1,29 +1,47 @@
 
-Ÿ
-java:S1488C"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8´“î¡Ú2J$2e4b107b-7022-4a79-ab1a-c4eb5e378595
- 
-java:S1488M"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8µ“î¡Ú2J$da348c43-047b-4c15-a94d-426396ffa353
+c
+java:S1192U"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ıÕÁÕ8£¶¦Ú2
+y
+java:S1488~"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¤¶¦Ú2
 
-java:S2629"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¶“î¡Ú2J$eba31f2a-022e-47dd-bc35-cd4bc8d11f1b
-z
-java:S2629 "7Use the built-in formatting to construct this argument.(»ø•£8¶“î¡Ú2J$66d62f2d-7ab0-4abf-9b61-53324112f6fd
-z
-java:S2629)"7Use the built-in formatting to construct this argument.(‡ªà¬8·“î¡Ú2J$c4bbaa48-529a-4d47-8718-4d374e2e5c7c
-
-java:S2629."7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¤÷¢Ú2J$a75a3550-887b-4f4c-bc2f-7430610d57c4
-}
-java:S1161":Add the "@Override" annotation above this method signature(“–ış8à“î¡Ú2J$302522a3-7ee5-417b-8ba5-347cc6f51eb9
-|
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8å“î¡Ú2J$c49c60f1-7f1b-49f0-b1e7-c2665e93aa8c
-‰
-java:S3457"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8æ“î¡Ú2J$d9fc4bb0-702b-43a1-8dfc-b3389c3d16e5
-„
-java:S3457 "AFormat specifiers should be used instead of string concatenation.(»ø•£8ç“î¡Ú2J$fe53fccf-2c0c-4d04-916d-e769ba00ca5b
-„
-java:S3457)"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8è“î¡Ú2J$aeaf04a9-9063-4fca-a364-2f59472d9203
-‰
-java:S3457."AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8Ø÷¢Ú2J$1a692181-48a6-4b2a-8d52-3df2daa07d79
-}
-java:S2209B"5Change this instance-reference to a static reference.(¶ù™óüÿÿÿÿ8ï“î¡Ú2J$8df201d2-d844-4b4b-84aa-80ba956a0acf
-n
-java:S1068"+Remove this unused "ioUtils" private field.(·‡¬ë8÷“î¡Ú2J$d2ee63bb-ab9d-4427-86d5-1081037a09c0
+java:S1488ƒ"\Immediately return this expression instead of assigning it to the temporary variable "data".(¶ù™óüÿÿÿÿ8¥¶¦Ú2
+{
+java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8¥¶¦Ú2
+Y
+java:S2629!"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¥¶¦Ú2
+T
+java:S2629#"7Use the built-in formatting to construct this argument.(»ø•£8¥¶¦Ú2
+T
+java:S26290"7Use the built-in formatting to construct this argument.(‡ªà¬8¦¶¦Ú2
+Y
+java:S26295"7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¦¶¦Ú2
+Y
+java:S2629@"7Use the built-in formatting to construct this argument.(ŠÄô‘øÿÿÿÿ8¦¶¦Ú2
+o
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“–ış8¬·¦Ú2
+W
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8­·¦Ú2
+V
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8°·¦Ú2
+c
+java:S3457!"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8²·¦Ú2
+^
+java:S3457#"AFormat specifiers should be used instead of string concatenation.(»ø•£8³·¦Ú2
+^
+java:S34570"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8´·¦Ú2
+c
+java:S34575"AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8µ·¦Ú2
+W
+java:S2209:"5Change this instance-reference to a static reference.(°õÏıúÿÿÿÿ8¶·¦Ú2
+R
+java:S2209?"5Change this instance-reference to a static reference.(¢„Áµ8¶·¦Ú2
+c
+java:S3457@"AFormat specifiers should be used instead of string concatenation.(ŠÄô‘øÿÿÿÿ8¶·¦Ú2
+W
+java:S2209P"5Change this instance-reference to a static reference.(›æüÂøÿÿÿÿ8¸·¦Ú2
+W
+java:S2209o"5Change this instance-reference to a static reference.(¼”åÆûÿÿÿÿ8¾·¦Ú2
+X
+java:S2209ƒ"5Change this instance-reference to a static reference.(¶ù™óüÿÿÿÿ8Á·¦Ú2
+H
+java:S1068"+Remove this unused "ioUtils" private field.(·‡¬ë8Ë·¦Ú2
