@@ -1,9 +1,17 @@
 
+Ÿ
+java:S14881"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¬¯’ŸÚ2J$37be8f29-f905-4035-a8d1-46d31529668b
 ¥
-java:S1488,"]Immediately return this expression instead of assigning it to the temporary variable "token".(´ú‚øÿÿÿÿ8×î†™Ú2J$c56a0b97-d70d-4d7e-9bac-460ef8e8c0cf
+java:S14887"]Immediately return this expression instead of assigning it to the temporary variable "token".(´ú‚øÿÿÿÿ8ÈğŸÚ2J$f132596b-6dc7-4e6d-ab7f-cd02cf5c4481
 z
-java:S2629"7Use the built-in formatting to construct this argument.(»ø•£8è„“™Ú2J$6f4a5954-3766-4d5e-9000-f0867917f5b0
+java:S2629"7Use the built-in formatting to construct this argument.(»ø•£8ÈğŸÚ2J$761be67e-e1b8-4523-a1a1-2876a46e7b0b
 }
-java:S1161":Add the "@Override" annotation above this method signature(“–ış8êî†™Ú2J$689ffbb8-cfbc-41f7-a7d5-2bfca0c5d649
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8áğŸÚ2J$475452d1-7056-455d-9fc4-a7153ac2c498
 „
-java:S3457"AFormat specifiers should be used instead of string concatenation.(»ø•£8‡…“™Ú2J$47c5f1c7-2565-4900-9d8a-1019af40fa39
+java:S3457"AFormat specifiers should be used instead of string concatenation.(»ø•£8åğŸÚ2J$2c89fbb4-cdcf-4cce-9582-0a2d352936c5
+
+java:S1854.">Remove this useless assignment to local variable "requestUrl".(úÁÙ8ìğŸÚ2J$965d7844-9e6b-4e93-a147-5e0c9e3210e5
+r
+java:S1481."/Remove this unused "requestUrl" local variable.(úÁÙ8íğŸÚ2J$a7ccd1d0-1ce3-4baa-8600-9ddeebce9340
+}
+java:S22090"5Change this instance-reference to a static reference.(õ†×­ÿÿÿÿÿ8îğŸÚ2J$07bca56e-e7ba-4ef6-9814-0fa1b8f04499
