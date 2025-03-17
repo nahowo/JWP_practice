@@ -1,17 +1,29 @@
 
 Ÿ
-java:S14881"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¬¯’ŸÚ2J$37be8f29-f905-4035-a8d1-46d31529668b
-¥
-java:S14887"]Immediately return this expression instead of assigning it to the temporary variable "token".(´ú‚øÿÿÿÿ8ÈğŸÚ2J$f132596b-6dc7-4e6d-ab7f-cd02cf5c4481
+java:S1488C"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8´“î¡Ú2J$2e4b107b-7022-4a79-ab1a-c4eb5e378595
+ 
+java:S1488M"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8µ“î¡Ú2J$da348c43-047b-4c15-a94d-426396ffa353
+
+java:S2629"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¶“î¡Ú2J$eba31f2a-022e-47dd-bc35-cd4bc8d11f1b
 z
-java:S2629"7Use the built-in formatting to construct this argument.(»ø•£8ÈğŸÚ2J$761be67e-e1b8-4523-a1a1-2876a46e7b0b
+java:S2629 "7Use the built-in formatting to construct this argument.(»ø•£8¶“î¡Ú2J$66d62f2d-7ab0-4abf-9b61-53324112f6fd
+z
+java:S2629)"7Use the built-in formatting to construct this argument.(‡ªà¬8·“î¡Ú2J$c4bbaa48-529a-4d47-8718-4d374e2e5c7c
+
+java:S2629."7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¤÷¢Ú2J$a75a3550-887b-4f4c-bc2f-7430610d57c4
 }
-java:S1161":Add the "@Override" annotation above this method signature(“–ış8áğŸÚ2J$475452d1-7056-455d-9fc4-a7153ac2c498
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8à“î¡Ú2J$302522a3-7ee5-417b-8ba5-347cc6f51eb9
+|
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8å“î¡Ú2J$c49c60f1-7f1b-49f0-b1e7-c2665e93aa8c
+‰
+java:S3457"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8æ“î¡Ú2J$d9fc4bb0-702b-43a1-8dfc-b3389c3d16e5
 „
-java:S3457"AFormat specifiers should be used instead of string concatenation.(»ø•£8åğŸÚ2J$2c89fbb4-cdcf-4cce-9582-0a2d352936c5
-
-java:S1854.">Remove this useless assignment to local variable "requestUrl".(úÁÙ8ìğŸÚ2J$965d7844-9e6b-4e93-a147-5e0c9e3210e5
-r
-java:S1481."/Remove this unused "requestUrl" local variable.(úÁÙ8íğŸÚ2J$a7ccd1d0-1ce3-4baa-8600-9ddeebce9340
+java:S3457 "AFormat specifiers should be used instead of string concatenation.(»ø•£8ç“î¡Ú2J$fe53fccf-2c0c-4d04-916d-e769ba00ca5b
+„
+java:S3457)"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8è“î¡Ú2J$aeaf04a9-9063-4fca-a364-2f59472d9203
+‰
+java:S3457."AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8Ø÷¢Ú2J$1a692181-48a6-4b2a-8d52-3df2daa07d79
 }
-java:S22090"5Change this instance-reference to a static reference.(õ†×­ÿÿÿÿÿ8îğŸÚ2J$07bca56e-e7ba-4ef6-9814-0fa1b8f04499
+java:S2209B"5Change this instance-reference to a static reference.(¶ù™óüÿÿÿÿ8ï“î¡Ú2J$8df201d2-d844-4b4b-84aa-80ba956a0acf
+n
+java:S1068"+Remove this unused "ioUtils" private field.(·‡¬ë8÷“î¡Ú2J$d2ee63bb-ab9d-4427-86d5-1081037a09c0
