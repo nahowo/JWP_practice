@@ -3,11 +3,9 @@ package web_application_server.webserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.DataOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.Socket;
+import java.nio.file.Files;
 
 public class RequestHandler extends Thread {
     private static Logger log = LoggerFactory.getLogger(RequestHandler.class);
@@ -20,13 +18,34 @@ public class RequestHandler extends Thread {
         log.debug("New Client Connected. Connected IP : {}, Port : {}", connection.getInetAddress(), connection.getPort());
 
         try (InputStream in = connection.getInputStream(); OutputStream out = connection.getOutputStream()) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
+            String line = "";
+            String url = "";
+            int lineNumber = 1;
+            while (!"".equals(line = bufferedReader.readLine())) {
+                log.info(line);
+                if (line != null && lineNumber == 1) {
+                    url = splitUrl(line);
+                    log.info("url: " + url);
+                }
+                lineNumber ++;
+                if (line == null) {
+                    return;
+                }
+            }
             DataOutputStream dos = new DataOutputStream(out);
-            byte[] body = "Hello World!".getBytes();
+            byte[] body = Files.readAllBytes(new File("./webapp/" + url).toPath());
             response200Header(dos, body.length);
             responseBody(dos, body);
         } catch (IOException e) {
             log.error(e.getMessage());
         }
+    }
+
+    public String splitUrl(String line) {
+        String[] tokens = line.split(" ");
+        String token = tokens[1].substring(1);
+        return token;
     }
 
     private void response200Header(DataOutputStream dos, int lenghtOfBodyContent) {
