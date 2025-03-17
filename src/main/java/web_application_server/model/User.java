@@ -1,4 +1,4 @@
-package model;
+package web_application_server.model;
 
 public class User {
     private String userId;

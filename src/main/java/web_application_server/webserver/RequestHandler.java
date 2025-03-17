@@ -37,6 +37,8 @@ public class RequestHandler extends Thread {
         }
     }
 
+
+
     public String splitUrl(String line) {
         String[] tokens = line.split(" ");
         String token = tokens[1].substring(1);

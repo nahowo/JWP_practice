@@ -1,4 +1,4 @@
-package util;
+package web_application_server.util;
 
 import java.util.Arrays;
 import java.util.Map;

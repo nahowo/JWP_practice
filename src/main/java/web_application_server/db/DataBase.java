@@ -1,11 +1,11 @@
-package db;
+package web_application_server.db;
 
 import java.util.Collection;
 import java.util.Map;
 
 import com.google.common.collect.Maps;
 
-import model.User;
+import web_application_server.model.User;
 
 public class DataBase {
     private static Map<String, User> users = Maps.newHashMap();

@@ -1,8 +1,8 @@
 
 {
 java:S1118
-":Add a private constructor to hide the implicit public one.(üÛàåıÿÿÿÿJ$8ffa6f8c-6f32-4c6f-a161-f7f9e6574426
+":Add a private constructor to hide the implicit public one.(üÛàåıÿÿÿÿJ$c1eed39f-688c-4829-b2df-4e89cbc2b45b
 z
-java:S1612$"9Replace this lambda with method reference 'Pair::getKey'.(ùİ·—úÿÿÿÿJ$b8468f91-b8ad-4eba-9d7b-00f5a8b73b18
+java:S1612$"9Replace this lambda with method reference 'Pair::getKey'.(ùİ·—úÿÿÿÿJ$3b1e1c96-2647-40a6-a4d2-406944c97653
 |
-java:S1612$";Replace this lambda with method reference 'Pair::getValue'.(ùİ·—úÿÿÿÿJ$ca26d377-127e-4e71-83e6-091734500909
+java:S1612$";Replace this lambda with method reference 'Pair::getValue'.(ùİ·—úÿÿÿÿJ$246adb24-0813-4d80-ba3e-d54d7b5e51ee

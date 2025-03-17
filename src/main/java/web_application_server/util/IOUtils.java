@@ -1,4 +1,4 @@
-package util;
+package web_application_server.util;
 
 import java.io.BufferedReader;
 import java.io.IOException;
