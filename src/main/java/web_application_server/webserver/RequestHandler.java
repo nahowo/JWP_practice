@@ -47,10 +47,7 @@ public class RequestHandler extends Thread {
                 String body = IOUtils.readData(br, contentLength);
                 User user = signUp(body);
                 log.debug("user: " + user);
-
-                DataOutputStream dos = new DataOutputStream(out);
-                response302Header(dos, "/index.html", null);
-
+                response302Header(out, "/index.html", null);
                 DataBase.addUser(user);
 
             } else if ("/user/login".equals(url)) {
@@ -61,8 +58,7 @@ public class RequestHandler extends Thread {
                 if (user == null || !(user.getPassword().equals(param.get("password")))) {
                     responseResource(out, "/user/login_failed.html");
                 } else {
-                    DataOutputStream dos = new DataOutputStream(out);
-                    response302Header(dos, "/index.html", "logined=true");
+                    response302Header(out, "/index.html", "logined=true");
                 }
             } else if ("/user/list".equals(url)) {
                 if (!logined) {
@@ -71,14 +67,12 @@ public class RequestHandler extends Thread {
                 }
                 Collection<User> users = DataBase.findAll();
                 byte[] body = userStringBuilder(users);
-                DataOutputStream dos = new DataOutputStream(out);
-                response200Header(dos, body.length, "text/html;charset=utf-8");
-                responseBody(dos, body);
+                response200Header(out, body.length, "text/html;charset=utf-8");
+                responseBody(out, body);
             } else if (url.endsWith(".css")) {
-                DataOutputStream dos = new DataOutputStream(out);
                 byte[] body = Files.readAllBytes(new File("./webapp" + url).toPath());
-                response200Header(dos, body.length, "text/css");
-                responseBody(dos, body);
+                response200Header(out, body.length, "text/css");
+                responseBody(out, body);
             } else {
                 responseResource(out, url);
             }
@@ -138,7 +132,8 @@ public class RequestHandler extends Thread {
         return token;
     }
 
-    private void response200Header(DataOutputStream dos, int lenghtOfBodyContent, String contentType) {
+    private void response200Header(OutputStream out, int lenghtOfBodyContent, String contentType) {
+        DataOutputStream dos = new DataOutputStream(out);
         try {
             dos.writeBytes("HTTP/1.1 200 ok \r\n");
             dos.writeBytes("Content-Type: " + contentType + "\r\n");
@@ -149,7 +144,8 @@ public class RequestHandler extends Thread {
         }
     }
 
-    private void response302Header(DataOutputStream dos, String url, String cookies) {
+    private void response302Header(OutputStream out, String url, String cookies) {
+        DataOutputStream dos = new DataOutputStream(out);
         try {
             dos.writeBytes("HTTP/1.1 302 redirect \r\n");
             if (cookies != null) {
@@ -169,7 +165,8 @@ public class RequestHandler extends Thread {
         responseBody(dos, body);
     }
 
-    private void responseBody(DataOutputStream dos, byte[] body) {
+    private void responseBody(OutputStream out, byte[] body) {
+        DataOutputStream dos = new DataOutputStream(out);
         try {
             dos.write(body, 0, body.length);
             dos.flush();
