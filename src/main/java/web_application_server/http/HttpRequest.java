@@ -17,17 +17,24 @@ public class HttpRequest {
     public HttpRequest(InputStream in) {
         try {
             BufferedReader br = new BufferedReader(new InputStreamReader(in, "UTF-8"));
-            String line = br.readLine();
-            requestLine = new RequestLine(line);
+            requestLine = new RequestLine(createRequestLine(br));
             requestParams.addQueryString(requestLine.getQueryString());
-            headers = parseHeaders(br);
+            headers = processHeader(br);
             requestParams.addBody(IOUtils.readData(br, headers.getContentLength()));
         } catch (IOException e) {
             log.error(e.getMessage());
         }
     }
 
-    private HttpHeaders parseHeaders(BufferedReader br) throws IOException{
+    private String createRequestLine(BufferedReader br) throws IOException {
+        String line = br.readLine();
+        if (line == null) {
+            throw new IllegalStateException();
+        }
+        return line;
+    }
+
+    private HttpHeaders processHeader(BufferedReader br) throws IOException{
         HttpHeaders headers = new HttpHeaders();
         String line;
         while (!(line = br.readLine()).equals("")) {

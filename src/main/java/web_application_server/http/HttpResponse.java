@@ -10,6 +10,7 @@ import java.io.OutputStream;
 import java.nio.file.Files;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class HttpResponse {
     private static final Logger log = LoggerFactory.getLogger(java.net.http.HttpResponse.class);
@@ -35,7 +36,36 @@ public class HttpResponse {
             } else {
                 contentType = "text/html;charset=utf-8";
             }
-            responseResource(body, contentType);
+            headers.put("Content-Type", contentType);
+            headers.put("Content-Length", body.length + "");
+            response200Header(body.length);
+            responseBody(body);
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+    }
+
+    public void forwardBody(String body) {
+        byte[] contents = body.getBytes();
+        headers.put("Content-Length", body.length() + "");
+        response200Header(body.length());
+    }
+
+    private void response200Header(int lenghtOfBodyContent) {
+        try {
+            dos.writeBytes("HTTP/1.1 200 OK \r\n");
+            processHeaders();
+            dos.writeBytes("\r\n");
+        } catch (IOException e) {
+            log.error(e.getMessage());
+        }
+    }
+
+    public void responseBody(byte[] body) {
+        try {
+            dos.write(body, 0, body.length);
+            dos.writeBytes("\r\n");
+            dos.flush();
         } catch (IOException e) {
             log.error(e.getMessage());
         }
@@ -44,26 +74,20 @@ public class HttpResponse {
     public void sendRedirect(String url) { // 다른 URL로 리다이렉트(302)
         // redirect 방식
         try {
-            dos.writeBytes("HTTP/1.1 302 redirect \r\n");
+            dos.writeBytes("HTTP/1.1 302 Found \r\n");
+            processHeaders();
             dos.writeBytes("Location: " + url + " \r\n");
-            for (Map.Entry<String, String> entry : headers.entrySet()) {
-                dos.writeBytes(entry.getKey() + ": " + entry.getValue() + " \r\n");
-            }
         } catch (IOException e) {
             log.error(e.getMessage());
         }
     }
 
-    private void responseResource(byte[] body, String contentType) throws IOException {
-        addHeader("Content-Type: ", contentType);
-        responseBody(dos, body);
-    }
-
-    private void responseBody(OutputStream out, byte[] body) {
-        DataOutputStream dos = new DataOutputStream(out);
+    public void processHeaders() {
         try {
-            dos.write(body, 0, body.length);
-            dos.flush();
+            Set<String> keys = headers.keySet();
+            for (String key : keys) {
+                dos.writeBytes(key + ": " + headers.get(key) + " \r\n");
+            }
         } catch (IOException e) {
             log.error(e.getMessage());
         }
