@@ -1,34 +1,25 @@
 
 
-java:S1192$"GDefine a constant instead of duplicating this literal "userId" 4 times.(½Õ£†ûÿÿÿÿ8Ÿ ÌÚ2J$c385fc48-7cc1-4499-98df-bb5e9f270076
+java:S1192!"GDefine a constant instead of duplicating this literal "userId" 3 times.(½Õ£†ûÿÿÿÿ8Ÿ ÌÚ2J$2159a299-7cdf-4ffa-9e80-04917ef45f46
 Œ
-java:S1192%"IDefine a constant instead of duplicating this literal "password" 3 times.(»’«…8  ÌÚ2J$029c0dfa-acba-465d-afdf-665a822a4e22
+java:S1192""IDefine a constant instead of duplicating this literal "password" 3 times.(»’«…8  ÌÚ2J$bcdd2698-d7d5-45a9-a0f5-9ce9a4e0fa9a
 ”
-java:S1192*"LDefine a constant instead of duplicating this literal "/index.html" 3 times.(ÇÅüÃÿÿÿÿÿ8  ÌÚ2J$191d9d9e-710f-4221-a6ba-a06319a2e748
+java:S1192'"LDefine a constant instead of duplicating this literal "/index.html" 3 times.(ÇÅüÃÿÿÿÿÿ8  ÌÚ2J$35d78a9b-5bec-4d3a-a76c-cd600c298cef
 ‰
-java:S1192Q"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ıÕÁÕ8  ÌÚ2J$7ac8744e-30a0-4f8c-8c41-755d394d28b1
+java:S1192N"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ıÕÁÕ8  ÌÚ2J$2e63e31d-d3e5-48d9-bfd6-70b424189f71
 Ÿ
-java:S1488e"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¡ ÌÚ2J$6cef522e-7ef6-4901-8c88-5c5b1bd58dea
+java:S1488b"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¡ ÌÚ2J$f040c568-5bf8-4544-85d6-5060e7830068
 
-java:S1488j"\Immediately return this expression instead of assigning it to the temporary variable "data".(¦ÚÎj8¡ ÌÚ2J$afd765dd-d0df-41d2-aa2b-cf2f4166d948
+java:S1488g"\Immediately return this expression instead of assigning it to the temporary variable "data".(¦ÚÎj8¡ ÌÚ2J$cae31681-294f-4e77-920b-3aaa3d14e720
  
-java:S1488t"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8¡ ÌÚ2J$b6e52a60-5139-4462-821c-a117098b9248
+java:S1488q"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8¡ ÌÚ2J$7ff7c3f9-8e4b-42b3-95b8-825d452d7cf2
 z
-java:S2629!"7Use the built-in formatting to construct this argument.(ß¶¹8¢ ÌÚ2J$80b7467a-b749-48c8-aea5-03fe04d19fa7
+java:S2629"7Use the built-in formatting to construct this argument.(ß¶¹8¢ ÌÚ2J$3ddf596b-eb62-4feb-ae7b-087ddeeb0f1e
 
-java:S2629("7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¢ ÌÚ2J$6caa36d2-3b93-40d2-81d9-8e2b108e59b2
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“–ış8«¥‘ÌÚ2
+java:S2629%"7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¢ ÌÚ2J$5bdbe3ad-7fe7-4374-bec2-92b299d7e231
 }
-java:S1161":Add the "@Override" annotation above this method signature(“–ış8± ÌÚ2J$ac1ec19b-8418-4995-baa3-da27a1c51025
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8± ÌÚ2J$96f5f532-8516-42dd-bcf3-66629720a583
 „
-java:S3457!"AFormat specifiers should be used instead of string concatenation.(ß¶¹8´ ÌÚ2J$cdda460d-cc4b-49ee-bab1-f2b45cc48110
+java:S3457"AFormat specifiers should be used instead of string concatenation.(ß¶¹8´ ÌÚ2J$11340bd4-37ec-4c89-982f-2739049b6407
 ‰
-java:S3457("AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8µ ÌÚ2J$12e8739c-8a0a-4d9a-8481-38786c92b7c8
-ˆ
-java:S1128
-"@Remove this unused import 'web_application_server.util.IOUtils'.(İÓı©şÿÿÿÿ8øïÌÚ2J$f2cfbd65-2b5d-4e31-9716-2dc86d06200b
-z
-java:S1128"2Remove this unused import 'javax.xml.crypto.Data'.(¦¿çˆıÿÿÿÿ8øïÌÚ2J$7fb5dc19-9e6b-4f51-a444-985d1dfcab59
-s
-java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8ùïÌÚ2J$840ccacb-33a9-4ae0-aa87-02ebeb617221
+java:S3457%"AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8µ ÌÚ2J$06a045ad-90e6-426c-9c67-67a31a9e5c7c

@@ -7,12 +7,9 @@ import web_application_server.http.HttpRequest;
 import web_application_server.http.HttpResponse;
 import web_application_server.model.User;
 import web_application_server.util.HttpRequestUtils;
-import web_application_server.util.IOUtils;
 
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.net.Socket;
-import java.nio.file.Files;
 import java.util.Collection;
 import java.util.Map;
 
@@ -36,7 +33,7 @@ public class RequestHandler extends Thread {
                 User user = new User(request.getParameter("userId"),
                         request.getParameter("password"),
                         request.getParameter("name"),
-                        request.getParameter("eamil"));
+                        request.getParameter("email"));
                 log.debug("user: " + user);
                 DataBase.addUser(user);
                 response.sendRedirect("/index.html");
@@ -51,7 +48,7 @@ public class RequestHandler extends Thread {
                     response.sendRedirect("/index.html");
                 }
             } else if ("/user/list".equals(path)) {
-                if (request.getParameter("userId") != null && isLogin(request.getHeader("Cookie"))) {
+                if (isLogin(request.getHeader("Cookie"))) {
                     Collection<User> users = DataBase.findAll();
                     StringBuilder sb = userStringBuilder(users);
                     response.forwardBody(sb.toString());
