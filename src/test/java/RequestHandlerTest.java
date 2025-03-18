@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import web_application_server.util.HttpRequestUtils;
 import web_application_server.webserver.RequestHandler;
 import web_application_server.model.User;
 
@@ -33,10 +32,5 @@ public class RequestHandlerTest {
     public void isLoginTest() {
         String line = "Set-Cookie: logined=true";
         Assertions.assertEquals(true, requestHandler.isLogin(line));
-    }
-
-    @Test
-    public void userCreateTest() {
-
     }
 }

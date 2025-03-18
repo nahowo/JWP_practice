@@ -1,31 +1,31 @@
 
 ‰
-java:S1192Z"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ýÕÁÕ8ª´½¶Ú2J$fbb0fcb4-5d73-40ee-bfd6-8ff893426c88
+java:S1192Z"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ýÕÁÕ8ª´½¶Ú2J$64385192-eda9-42d4-aa62-9e6015f80551
 Ÿ
-java:S1488t"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8«´½¶Ú2J$b7d0eee5-fe02-45dc-959a-42b1e50615d6
+java:S1488t"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8«´½¶Ú2J$c94a3f3b-4caa-4d95-8d78-57a37b8ad3b1
 ž
-java:S1488y"\Immediately return this expression instead of assigning it to the temporary variable "data".(¦ÚÎj8«´½¶Ú2J$f6ffc3d4-ddb0-4b7e-87a4-4fe71109ef1c
+java:S1488y"\Immediately return this expression instead of assigning it to the temporary variable "data".(¦ÚÎj8«´½¶Ú2J$7af66e33-7e72-4f23-a8d8-d976ae869981
 ¡
-java:S1488ƒ"]Immediately return this expression instead of assigning it to the temporary variable "token".(Ž¨…É8«´½¶Ú2J$4e366dfe-bf5f-477b-9f27-117338d879ad
+java:S1488ƒ"]Immediately return this expression instead of assigning it to the temporary variable "token".(Ž¨…É8«´½¶Ú2J$1f4b02bd-b251-423f-9a23-663cf3f5e9e1
 
-java:S2629"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¬´½¶Ú2J$cc5c8029-5c30-48bc-907b-95cca4829933
+java:S2629"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¬´½¶Ú2J$20b9db5b-9312-42a8-933a-3dfd27f3d206
 z
-java:S2629,"7Use the built-in formatting to construct this argument.(‡ªà¬8¬´½¶Ú2J$7afda7f1-4683-4420-b6a0-3ce8855b5603
+java:S2629,"7Use the built-in formatting to construct this argument.(‡ªà¬8¬´½¶Ú2J$5cb421fa-4d9d-4f8f-a8d8-06bd0455731f
 
-java:S26291"7Use the built-in formatting to construct this argument.(ðÖ´îþÿÿÿÿ8¬´½¶Ú2J$db41409c-263f-4d47-9854-1aa2c6c7c773
+java:S26291"7Use the built-in formatting to construct this argument.(ðÖ´îþÿÿÿÿ8¬´½¶Ú2J$6b18b3f3-fd90-4efa-8649-c6ff7107cc7b
 
-java:S26299"7Use the built-in formatting to construct this argument.(ŠÄô‘øÿÿÿÿ8¬´½¶Ú2J$c858fa4e-7861-4e00-bc59-2e759fe83ca6
+java:S26299"7Use the built-in formatting to construct this argument.(ŠÄô‘øÿÿÿÿ8¬´½¶Ú2J$8484fde9-6095-48bc-b8f7-cfd95b8e34b7
 •
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(“–ýþ8¼µ½¶Ú2J$5749dd3f-09e9-4e9a-bd04-dec408af3675
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(“–ýþ8¼µ½¶Ú2J$76fa685e-182b-4966-bea7-c361f23a2da9
 }
-java:S1161":Add the "@Override" annotation above this method signature(“–ýþ8½µ½¶Ú2J$9f536741-a4ee-4b7e-afbe-dc5678842f4e
+java:S1161":Add the "@Override" annotation above this method signature(“–ýþ8½µ½¶Ú2J$eadc4cdb-3cc2-4970-b385-837ddbdd4bf9
 |
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8¿µ½¶Ú2J$473f985d-d981-4f19-8ed7-7cfdce19e527
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8¿µ½¶Ú2J$da22b362-e4a4-45f4-be03-f073ee1cb954
 ‰
-java:S3457"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8Àµ½¶Ú2J$37a7a4db-2b28-45f4-a174-6826bb91463d
+java:S3457"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8Àµ½¶Ú2J$7b41e91c-3cc1-4c52-af4e-ef40efc6ab89
 „
-java:S3457,"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8ÆÇÏ¶Ú2J$4212b1f2-2ac9-49f0-bee4-2d2d46acc5c7
+java:S3457,"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8ÆÇÏ¶Ú2J$ca1fc0ad-cb98-42fb-8f7d-4a587f4e17ef
 ‰
-java:S34571"AFormat specifiers should be used instead of string concatenation.(ðÖ´îþÿÿÿÿ8ÇÇÏ¶Ú2J$a08b77f3-3b06-430e-8e59-fae461bd7ab7
+java:S34571"AFormat specifiers should be used instead of string concatenation.(ðÖ´îþÿÿÿÿ8ÇÇÏ¶Ú2J$db4e4b34-fae6-466e-b269-4320caf24636
 ‰
-java:S34579"AFormat specifiers should be used instead of string concatenation.(ŠÄô‘øÿÿÿÿ8ÈÇÏ¶Ú2J$88e2b79b-c9af-4331-ab7b-349ab09ed5c9
+java:S34579"AFormat specifiers should be used instead of string concatenation.(ŠÄô‘øÿÿÿÿ8ÈÇÏ¶Ú2J$1eb488ca-488e-407c-8718-9c64b56a0951
