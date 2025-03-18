@@ -1,47 +1,35 @@
 
-c
-java:S1192U"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ıÕÁÕ8£¶¦Ú2
-y
-java:S1488~"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8¤¶¦Ú2
+‰
+java:S1192R"FDefine a constant instead of duplicating this literal "</td>" 3 times.(ıÕÁÕ8×™åµÚ2J$315af4a6-be27-419f-92d9-5f90cb4bea37
+Ÿ
+java:S1488{"\Immediately return this expression instead of assigning it to the temporary variable "user".(¯»É–8Ù™åµÚ2J$47eead3a-a1ff-40e3-bf27-256843ce092a
+Ÿ
+java:S1488€"\Immediately return this expression instead of assigning it to the temporary variable "data".(¦ÚÎj8Ù™åµÚ2J$074aa533-04e7-427d-9660-110a7eefdc92
+¡
+java:S1488Š"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8Ù™åµÚ2J$20de85de-b583-4328-b510-6b18a793b193
 
-java:S1488ƒ"\Immediately return this expression instead of assigning it to the temporary variable "data".(¶ù™óüÿÿÿÿ8¥¶¦Ú2
-{
-java:S1488"]Immediately return this expression instead of assigning it to the temporary variable "token".(¨…É8¥¶¦Ú2
-Y
-java:S2629!"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8¥¶¦Ú2
-T
-java:S2629#"7Use the built-in formatting to construct this argument.(»ø•£8¥¶¦Ú2
-T
-java:S26290"7Use the built-in formatting to construct this argument.(‡ªà¬8¦¶¦Ú2
-Y
-java:S26295"7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8¦¶¦Ú2
-Y
-java:S2629@"7Use the built-in formatting to construct this argument.(ŠÄô‘øÿÿÿÿ8¦¶¦Ú2
-o
-java:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“–ış8¬·¦Ú2
-W
-java:S1161":Add the "@Override" annotation above this method signature(“–ış8­·¦Ú2
-V
-java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8°·¦Ú2
-c
-java:S3457!"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8²·¦Ú2
-^
-java:S3457#"AFormat specifiers should be used instead of string concatenation.(»ø•£8³·¦Ú2
-^
-java:S34570"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8´·¦Ú2
-c
-java:S34575"AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8µ·¦Ú2
-W
-java:S2209:"5Change this instance-reference to a static reference.(°õÏıúÿÿÿÿ8¶·¦Ú2
-R
-java:S2209?"5Change this instance-reference to a static reference.(¢„Áµ8¶·¦Ú2
-c
-java:S3457@"AFormat specifiers should be used instead of string concatenation.(ŠÄô‘øÿÿÿÿ8¶·¦Ú2
-W
-java:S2209P"5Change this instance-reference to a static reference.(›æüÂøÿÿÿÿ8¸·¦Ú2
-W
-java:S2209o"5Change this instance-reference to a static reference.(¼”åÆûÿÿÿÿ8¾·¦Ú2
-X
-java:S2209ƒ"5Change this instance-reference to a static reference.(¶ù™óüÿÿÿÿ8Á·¦Ú2
-H
-java:S1068"+Remove this unused "ioUtils" private field.(·‡¬ë8Ë·¦Ú2
+java:S2629"7Use the built-in formatting to construct this argument.(õÆ—éúÿÿÿÿ8Ú™åµÚ2J$be2041c0-b049-4802-86e0-15e7a8720173
+z
+java:S2629 "7Use the built-in formatting to construct this argument.(»ø•£8Ú™åµÚ2J$69e39cc0-de5b-424d-a769-3893b18a3e6d
+z
+java:S2629-"7Use the built-in formatting to construct this argument.(‡ªà¬8Ú™åµÚ2J$b72e5181-362d-4b20-b9d2-e448f6b5747d
+
+java:S26292"7Use the built-in formatting to construct this argument.(ğÖ´îşÿÿÿÿ8Ú™åµÚ2J$eec3fe6a-e5f2-4ed8-ba05-a4a19940ace0
+
+java:S2629="7Use the built-in formatting to construct this argument.(ŠÄô‘øÿÿÿÿ8Ú™åµÚ2J$3c025e70-7245-4f52-bbfa-7d8b4d43df52
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(“–ış8î™åµÚ2J$d7b312bb-44ca-4805-8c34-2a23ea6fff74
+}
+java:S1161":Add the "@Override" annotation above this method signature(“–ış8ğ™åµÚ2J$a4190e5a-5815-4d8f-a9fe-1a747108b833
+|
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Íÿ‡ã8ô™åµÚ2J$b19e0042-6df4-49d5-aa4d-1fb873cfbf73
+‰
+java:S3457"AFormat specifiers should be used instead of string concatenation.(õÆ—éúÿÿÿÿ8ô™åµÚ2J$b4a4f684-61b5-4f7a-b191-e45518bcec6c
+„
+java:S3457 "AFormat specifiers should be used instead of string concatenation.(»ø•£8õ™åµÚ2J$10439981-b270-4fa6-9d41-b9dfd3a4e2d6
+„
+java:S3457-"AFormat specifiers should be used instead of string concatenation.(‡ªà¬8ö™åµÚ2J$edee1f6b-d240-4c99-a7da-67c195127414
+‰
+java:S34572"AFormat specifiers should be used instead of string concatenation.(ğÖ´îşÿÿÿÿ8÷™åµÚ2J$152c5f0b-1140-4e74-852e-8d52ce4f6863
+‰
+java:S3457="AFormat specifiers should be used instead of string concatenation.(ŠÄô‘øÿÿÿÿ8ø™åµÚ2J$5556a21a-27a5-4077-9d31-7c524c3dec8a

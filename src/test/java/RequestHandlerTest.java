@@ -6,11 +6,9 @@ import web_application_server.webserver.RequestHandler;
 import web_application_server.model.User;
 
 import java.net.Socket;
-import java.util.Map;
 
 public class RequestHandlerTest {
     private RequestHandler requestHandler;
-    private static HttpRequestUtils httpRequestUtils;
     @BeforeEach
     public void setUp() {
         requestHandler = new RequestHandler(new Socket());
@@ -19,7 +17,6 @@ public class RequestHandlerTest {
     public void getUrlTest() {
         Assertions.assertEquals("/user/create", requestHandler.splitUrl("POST /user/create?userId=nahowo&password=1234&name=nahyun+park&email=nahowo%40naver.com HTTP/1.1"));
         Assertions.assertEquals("/index.html", requestHandler.splitUrl("GET /index.html HTTP/1.1"));
-
     }
 
     @Test
@@ -33,8 +30,9 @@ public class RequestHandlerTest {
     }
 
     @Test
-    public void readDataTest() {
-
+    public void isLoginTest() {
+        String line = "Set-Cookie: logined=true";
+        Assertions.assertEquals(true, requestHandler.isLogin(line));
     }
 
     @Test
