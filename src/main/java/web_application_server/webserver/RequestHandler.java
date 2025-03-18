@@ -28,8 +28,7 @@ public class RequestHandler extends Thread {
             String line = br.readLine();
             int contentLength = 0;
             log.info("request line: " + line);
-            String url = splitUrl(line);
-            log.info("url: " + url);
+            String url = getUrl(line);
             boolean logined = false;
 
             while (!"".equals(line = br.readLine())) {
@@ -59,15 +58,11 @@ public class RequestHandler extends Thread {
                 Map<String, String> param = getBodyParam(body);
                 User user = DataBase.findUserById(param.get("userId"));
                 log.debug("logined user: " + user);
-                if (user == null) {
+                if (user == null || !(user.getPassword().equals(param.get("password")))) {
                     responseResource(out, "/user/login_failed.html");
-                    return;
-                }
-                if (user.getPassword().equals(param.get("password"))) {
+                } else {
                     DataOutputStream dos = new DataOutputStream(out);
                     response302Header(dos, "/index.html", "logined=true");
-                } else {
-                    responseResource(out, "/user/login_failed.html");
                 }
             } else if ("/user/list".equals(url)) {
                 if (!logined) {
@@ -75,17 +70,7 @@ public class RequestHandler extends Thread {
                     return;
                 }
                 Collection<User> users = DataBase.findAll();
-                StringBuilder sb = new StringBuilder();
-                sb.append("<table borders='1'>");
-                for (User user : users) {
-                    sb.append("<tr>");
-                    sb.append("<td>" + user.getUserId() + "</td>");
-                    sb.append("<td>" + user.getName() + "</td>");
-                    sb.append("<td>" + user.getEmail() + "</td>");
-                    sb.append("</tr>");
-                }
-                sb.append("</table>");
-                byte[] body = sb.toString().getBytes();
+                byte[] body = userStringBuilder(users);
                 DataOutputStream dos = new DataOutputStream(out);
                 response200Header(dos, body.length, "text/html;charset=utf-8");
                 responseBody(dos, body);
@@ -101,6 +86,20 @@ public class RequestHandler extends Thread {
         } catch (IOException e) {
             log.error(e.getMessage());
         }
+    }
+
+    private byte[] userStringBuilder(Collection<User> users) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("<table borders='1'>");
+        for (User user : users) {
+            sb.append("<tr>");
+            sb.append("<td>" + user.getUserId() + "</td>");
+            sb.append("<td>" + user.getName() + "</td>");
+            sb.append("<td>" + user.getEmail() + "</td>");
+            sb.append("</tr>");
+        }
+        sb.append("</table>");
+        return sb.toString().getBytes();
     }
 
     public boolean isLogin(String line) {
@@ -129,7 +128,7 @@ public class RequestHandler extends Thread {
         return data;
     }
 
-    public String splitUrl(String line) {
+    public String getUrl(String line) {
         String[] tokens = line.split(" ");
         int index = tokens[1].indexOf("?");
         if (index == -1) {
