@@ -15,8 +15,8 @@ public class RequestHandlerTest {
     }
     @Test
     public void getUrlTest() {
-        Assertions.assertEquals("/user/create", requestHandler.splitUrl("POST /user/create?userId=nahowo&password=1234&name=nahyun+park&email=nahowo%40naver.com HTTP/1.1"));
-        Assertions.assertEquals("/index.html", requestHandler.splitUrl("GET /index.html HTTP/1.1"));
+        Assertions.assertEquals("/user/create", requestHandler.getUrl("POST /user/create?userId=nahowo&password=1234&name=nahyun+park&email=nahowo%40naver.com HTTP/1.1"));
+        Assertions.assertEquals("/index.html", requestHandler.getUrl("GET /index.html HTTP/1.1"));
     }
 
     @Test
