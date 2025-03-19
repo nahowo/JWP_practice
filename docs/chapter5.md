@@ -233,7 +233,8 @@
 >
 - 요청 url의 타입에 따라 doPost, doGet을 작성한다. AbstractController의 doPost, doGet을 오버라이딩하도록 하고 로직을 추가한다.
 
-![IMG_2557.jpg](attachment:a8651958-7257-45f8-8740-264eaebcbea4:IMG_2557.jpg)
+![IMG_2557](https://github.com/user-attachments/assets/a3499d61-3715-446e-aa3e-8c978e3469db)
+
 
 ## 로직
 
