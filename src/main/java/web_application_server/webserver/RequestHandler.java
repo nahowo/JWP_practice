@@ -3,17 +3,11 @@ package web_application_server.webserver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import web_application_server.controller.Controller;
-import web_application_server.controller.RequestMapping;
-import web_application_server.db.DataBase;
 import web_application_server.http.HttpRequest;
 import web_application_server.http.HttpResponse;
-import web_application_server.model.User;
-import web_application_server.util.HttpRequestUtils;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.Collection;
-import java.util.Map;
 
 public class RequestHandler extends Thread {
     private static Logger log = LoggerFactory.getLogger(RequestHandler.class);

@@ -43,7 +43,7 @@ public class HttpRequest {
         return headers;
     }
 
-    public String getMethod() {
+    public HttpMethod getMethod() {
         return requestLine.getMethod();
     }
 

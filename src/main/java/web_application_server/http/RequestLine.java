@@ -7,14 +7,14 @@ import java.util.Map;
 
 public class RequestLine {
     private static final Logger log = LoggerFactory.getLogger(RequestLine.class);
-    private String method;
+    private HttpMethod method;
     private String path;
     private String queryString;
 
     RequestLine(String requestLine) {
         log.debug("request line: " + requestLine);
         String[] tokens = requestLine.split(" ");
-        this.method = tokens[0];
+        this.method = HttpMethod.valueOf(tokens[0]);
 
         String[] url = tokens[1].split("\\?");
         this.path = url[0];
@@ -24,7 +24,7 @@ public class RequestLine {
         }
     }
 
-    String getMethod() {
+    HttpMethod getMethod() {
         return method;
     }
 
