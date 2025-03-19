@@ -38,7 +38,7 @@ public class HttpResponse {
             }
             headers.put("Content-Type", contentType);
             headers.put("Content-Length", body.length + "");
-            response200Header(body.length);
+            response200Header();
             responseBody(body);
         } catch (IOException e) {
             log.error(e.getMessage());
@@ -49,11 +49,11 @@ public class HttpResponse {
         byte[] contents = body.getBytes();
         headers.put("Content-Type", "text/html;charset=utf-8");
         headers.put("Content-Length", body.length() + "");
-        response200Header(body.length());
+        response200Header();
         responseBody(contents);
     }
 
-    private void response200Header(int lenghtOfBodyContent) {
+    private void response200Header() {
         try {
             dos.writeBytes("HTTP/1.1 200 OK \r\n");
             processHeaders();
