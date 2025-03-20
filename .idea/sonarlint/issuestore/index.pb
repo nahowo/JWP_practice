@@ -101,3 +101,11 @@ E
 webapp/user/login.jsp,6/2/62adbe667f03d93207a8cc3f458a71501d65876d
 D
 webapp/user/form.jsp,f/2/f228e6d7ca87d75a58b010b41b1e01ccfb1cca13
+m
+=src/main/java/web_application_server/session/HttpSession.java,2/1/21d8a66ab9f71c0f96f840b0d12c81ca7b94121a
+K
+src/test/java/UUIDTest.java,c/6/c6b102e4309dd80919df7860af3bf1fa24edf430
+l
+<src/main/java/web_application_server/session/HttpCookie.java,7/3/73b523df7c66874f688dd17f124f0098471ac1de
+n
+>src/main/java/web_application_server/session/HttpSessions.java,2/7/275b1aef0e6fcd6a05e12fb1f774ec94bdfdbd12

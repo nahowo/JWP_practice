@@ -2,6 +2,9 @@ package web_application_server.http;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import web_application_server.session.HttpCookie;
+import web_application_server.session.HttpSession;
+import web_application_server.session.HttpSessions;
 import web_application_server.util.IOUtils;
 
 import java.io.BufferedReader;
@@ -45,6 +48,14 @@ public class HttpRequest {
 
     public HttpMethod getMethod() {
         return requestLine.getMethod();
+    }
+
+    public HttpCookie getCookies() {
+        return new HttpCookie(getHeader("Cookie"));
+    }
+
+    public HttpSession getSession() {
+        return HttpSessions.getSession(getCookies().getCookie("JSESSIONID"));
     }
 
     public String getPath() {

@@ -6,6 +6,7 @@ import web_application_server.db.DataBase;
 import web_application_server.http.HttpRequest;
 import web_application_server.http.HttpResponse;
 import web_application_server.model.User;
+import web_application_server.session.HttpSession;
 import web_application_server.util.HttpRequestUtils;
 
 import java.util.Collection;
@@ -15,7 +16,7 @@ public class ListUserController extends AbstractController {
     private static final Logger log = LoggerFactory.getLogger(ListUserController.class);
     @Override
     public void doGet(HttpRequest request, HttpResponse response) {
-        if (isLogin(request.getHeader("Cookie"))) {
+        if (isLogin(request.getSession())) {
             Collection<User> users = DataBase.findAll();
             StringBuilder sb = userStringBuilder(users);
             response.forwardBody(sb.toString());
@@ -23,13 +24,12 @@ public class ListUserController extends AbstractController {
             response.sendRedirect("/user/login.html");
         }
     }
-    private boolean isLogin(String cookieValue) {
-        Map<String, String> cookies = HttpRequestUtils.parseCookies(cookieValue);
-        String value = cookies.get("logined");
-        if (value == null) {
+    private boolean isLogin(HttpSession session) {
+        Object user = session.getAttribute("user");
+        if (user == null) {
             return false;
         }
-        return Boolean.parseBoolean(value);
+        return true;
     }
     private StringBuilder userStringBuilder(Collection<User> users) {
         StringBuilder sb = new StringBuilder();

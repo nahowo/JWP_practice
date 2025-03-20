@@ -6,6 +6,7 @@ import web_application_server.db.DataBase;
 import web_application_server.http.HttpRequest;
 import web_application_server.http.HttpResponse;
 import web_application_server.model.User;
+import web_application_server.session.HttpSession;
 
 public class LoginController extends AbstractController {
     private static final Logger log = LoggerFactory.getLogger(LoginController.class);
@@ -15,9 +16,8 @@ public class LoginController extends AbstractController {
         if (user == null || !(user.login(request.getParameter("password")))) {
             response.sendRedirect("/user/login_failed.html");
         } else {
-            if (!(request.getHeader("Cookie").contains("logined=true"))) {
-                response.addHeader("Set-Cookie", "logined=true; Path=/");
-            }
+            HttpSession session = request.getSession();
+            session.setAttribute("user", user);
             response.sendRedirect("/index.html");
         }
     }
