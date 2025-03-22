@@ -43,3 +43,6 @@ bin/
 
 ### tomcat classes ###
 tomcat.8080/work
+
+### .idea ###
+.idea/*
