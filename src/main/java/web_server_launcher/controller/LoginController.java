@@ -14,7 +14,8 @@ public class LoginController implements Controller {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User user = DataBase.findUserById(request.getParameter("userId"));
         if (user == null || !(user.login(request.getParameter("password")))) {
-            return "/user/login_failed.html";
+            request.setAttribute("loginFailed", true);
+            return "/user/login.jsp";
         }
         HttpSession session = request.getSession();
         session.setAttribute("user", user);
