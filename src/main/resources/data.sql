@@ -12,3 +12,5 @@ CREATE TABLE USERS
 
 INSERT INTO USERS
 VALUES ('admin', 'password', 'admin', 'admin@naver.com');
+INSERT INTO USERS
+VALUES ('nahowo', '1234', 'nahyun park', 'nahowo@naver.com');
