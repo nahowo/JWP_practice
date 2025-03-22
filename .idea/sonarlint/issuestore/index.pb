@@ -149,3 +149,5 @@ m
 =src/main/java/web_server_launcher/utils/UserSessionUtils.java,0/c/0cf01414709db50022f4798c1821b78a4d41a9e2
 K
 webapp/user/updatedForm.jsp,f/8/f83ea54938d14d1377a642d9f39df25e7afc8ff9
+@
+docs/chapter6.md,a/7/a785f602014fafbf0bc4f72b8410e3b5ea943bb3
