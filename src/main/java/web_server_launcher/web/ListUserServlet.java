@@ -12,7 +12,7 @@ import web_application_server.model.User;
 
 import java.io.IOException;
 
-@WebServlet("/user/list")
+//@WebServlet("/user/list")
 public class ListUserServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

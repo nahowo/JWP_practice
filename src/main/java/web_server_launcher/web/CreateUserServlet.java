@@ -11,7 +11,7 @@ import web_application_server.model.User;
 
 import java.io.IOException;
 
-@WebServlet("/user/create")
+//@WebServlet("/user/create")
 public class CreateUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -33,6 +33,17 @@ public class User {
         return this.password.equals(password);
     }
 
+    public boolean isSameUser(User user) {
+        return userId.equals(user.userId);
+    }
+
+    public void update(User user) {
+        this.userId = user.userId;
+        this.password = user.password;
+        this.name = user.name;
+        this.email = user.email;
+    }
+
     @Override
     public String toString() {
         return "User [userId=" + userId + ", password=" + password + ", name=" + name + ", email=" + email + "]";

@@ -12,7 +12,7 @@ import web_application_server.model.User;
 
 import java.io.IOException;
 
-@WebServlet("/user/login")
+//@WebServlet("/user/login")
 public class LoginUserServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
