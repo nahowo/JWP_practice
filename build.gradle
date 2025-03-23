@@ -1,10 +1,16 @@
 plugins {
     id 'java'
     id 'application'
+    id 'war'
 }
 
 application {
     mainClass = 'web_application_server.webserver.WebServer'
+}
+
+war {
+    webAppDirectory = file('webapp')
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
 }
 
 group = 'org.example'
@@ -28,6 +34,10 @@ dependencies {
     implementation 'jakarta.servlet:jakarta.servlet-api:6.1.0'
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.2'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.0'
+    implementation 'org.apache.commons:commons-dbcp2:2.9.0'
+    implementation 'org.springframework:spring-core:6.2.5'
+    implementation 'org.springframework:spring-jdbc:6.2.5'
+    testImplementation 'com.h2database:h2:2.3.232'
 }
 
 test {
