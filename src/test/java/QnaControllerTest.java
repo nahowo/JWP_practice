@@ -1,7 +1,11 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import web_application_server.model.Answer;
 import web_application_server.model.Question;
+import web_server_launcher.dao.AnswerDao;
 import web_server_launcher.dao.QuestionDao;
+
+import java.util.List;
 
 public class QnaControllerTest {
     @Test
@@ -18,5 +22,13 @@ public class QnaControllerTest {
     public void findAllQuestionTest() {
         QuestionDao questionDao = new QuestionDao();
         Assertions.assertEquals(8, questionDao.findAll().size());
+    }
+
+    @Test
+    public void getAnswerTest() {
+        AnswerDao answerDao = new AnswerDao();
+        List<Answer> actual = answerDao.findAllById(7L);
+        Assertions.assertEquals("Hanghee Yi", actual.get(0).getWriter());
+        Assertions.assertEquals("eungju", actual.get(1).getWriter());
     }
 }

@@ -65,6 +65,10 @@ public class JdbcTemplate {
         return query(sql, rm, createPreparedStatementSetter(parameters));
     }
 
+    public <T> List<T> query(String sql, RowMapper<T> rm, Long questionId) {
+        return query(sql, rm, createPreparedStatementSetter(questionId));
+    }
+
     private PreparedStatementSetter createPreparedStatementSetter(Object... parameters) {
         return new PreparedStatementSetter() {
             @Override
