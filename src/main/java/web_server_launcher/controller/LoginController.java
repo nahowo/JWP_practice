@@ -17,13 +17,8 @@ public class LoginController implements Controller {
     public static final Logger log = LoggerFactory.getLogger(LoginController.class);
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        User user = null;
         UserDao userDao = new UserDao();
-        try {
-            user = userDao.findByUserId(request.getParameter("userId"));
-        } catch (SQLException e) {
-            log.error(e.getMessage());
-        }
+        User user = userDao.findByUserId(request.getParameter("userId"));
         if (user == null || !(user.login(request.getParameter("password")))) {
             request.setAttribute("loginFailed", true);
             return "/user/login.jsp";

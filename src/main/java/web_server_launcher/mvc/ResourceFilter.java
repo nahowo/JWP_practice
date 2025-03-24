@@ -8,15 +8,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebFilter("/")
+@WebFilter("/*")
 public class ResourceFilter implements Filter {
     private static final List<String> resourcePrefixs = new ArrayList<>();
     static {
         resourcePrefixs.add("/css");
         resourcePrefixs.add("/js");
-        resourcePrefixs.add("fonts");
+        resourcePrefixs.add("/fonts");
         resourcePrefixs.add("/images");
-        resourcePrefixs.add("/favicon.ico");
+        resourcePrefixs.add("favicon.ico");
     }
 
     private RequestDispatcher defaultRequestDispatcher;
