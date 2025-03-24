@@ -1,13 +1,11 @@
 import org.junit.jupiter.api.Test;
 import web_application_server.controller.CreateUserController;
-import web_application_server.controller.ListUserController;
-import web_application_server.controller.LoginController;
 import web_application_server.http.HttpRequest;
 import web_application_server.http.HttpResponse;
 
 import java.io.*;
 
-public class ControllerTest {
+public class UserControllerTest {
     private String resourceDirectory = "./src/test/resources";
     @Test
     public void createUserControllerTest() throws Exception{

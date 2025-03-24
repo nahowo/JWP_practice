@@ -3,6 +3,7 @@ package web_server_launcher.mvc;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import web_server_launcher.controller.*;
+import web_server_launcher.controller.question.ShowController;
 import web_server_launcher.controller.userController.*;
 
 import java.util.HashMap;
@@ -23,6 +24,7 @@ public class RequestMapping {
         mappings.put("/user/profile", new ProfileController());
         mappings.put("/user/update", new UpdateUserController());
         mappings.put("/user/updateForm", new UpdateFormUserController());
+        mappings.put("/qna/show", new ShowController());
 
         log.info("Initialized Request Mapping!");
     }
