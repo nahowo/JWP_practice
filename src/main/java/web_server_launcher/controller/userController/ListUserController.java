@@ -20,11 +20,7 @@ public class ListUserController implements Controller {
         }
         request.setAttribute("loginedUser", UserSessionUtils.getUserFromSession(request.getSession()));
         UserDao userDao = new UserDao();
-        try {
-            request.setAttribute("users", userDao.findAll());
-        } catch (SQLException e) {
-            log.error(e.getMessage());
-        }
+        request.setAttribute("users", userDao.findAll());
         return "/user/list.jsp";
     }
 }

@@ -22,11 +22,7 @@ public class UpdateUserController implements Controller {
         }
         User updatedUser = new User(request.getParameter("userId"), request.getParameter("password"), request.getParameter("name"), request.getParameter("email"));
         UserDao userDao = new UserDao();
-        try {
-            userDao.update(updatedUser);
-        } catch (SQLException e) {
-            log.error(e.getMessage());
-        }
+        userDao.update(updatedUser);
         return "redirect:/";
     }
 }
