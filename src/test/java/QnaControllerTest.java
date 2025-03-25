@@ -5,6 +5,7 @@ import web_application_server.model.Question;
 import web_server_launcher.dao.AnswerDao;
 import web_server_launcher.dao.QuestionDao;
 
+import java.util.Date;
 import java.util.List;
 
 public class QnaControllerTest {
@@ -30,5 +31,15 @@ public class QnaControllerTest {
         List<Answer> actual = answerDao.findAllById(7L);
         Assertions.assertEquals("Hanghee Yi", actual.get(0).getWriter());
         Assertions.assertEquals("eungju", actual.get(1).getWriter());
+    }
+
+    @Test
+    public void addAnswerTest() {
+        AnswerDao answerDao = new AnswerDao();
+        Answer answer = new Answer("answerTest", "contents", 1L);
+        answerDao.insert(answer);
+
+        Answer actual = answerDao.findById(6L);
+        System.out.println("actual = " + actual);
     }
 }

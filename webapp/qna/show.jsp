@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
 <!DOCTYPE html>
 <html lang="kr">
 <head>
     <%@ include file="/include/header.jspf" %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<%--    <script src="../js/scripts.js"></script>--%>
 </head>
 <body>
 <%@ include file="/include/navigation.jspf" %>
@@ -104,6 +105,34 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function() {
+        $(".answerWrite input[type=submit]").click(addAnswer);
+        function addAnswer(e) {
+            console.log("ajax 호출 성공");
+            var queryString = $("form[name=answer]").serialize();
+
+            $.ajax({
+                type: 'post',
+                url: '/api/qna/addAnswer',
+                data: queryString,
+                dataType: 'json',
+                error: onError,
+                success: onSuccess,
+            });
+        }
+        function onSuccess(json, status) {
+            var answerTemplate = $("#answerTemplate").html();
+            var template = answerTemplate.format(json.answer.writer, new Date(json.answer.createdDate), json.answer.contents, json.answer.answerId);
+            $(".qna-comment-slipp-articles").prepend(template);
+        }
+
+        function onError(xhr, status) {
+            alert("error");
+        }
+    });
+</script>
 
 <script type="text/template" id="answerTemplate">
     <article class="article">

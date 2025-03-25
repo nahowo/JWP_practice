@@ -33,7 +33,9 @@ public class DispatcherServlet extends HttpServlet {
         Controller controller = rm.findController(requestUrl);
         try {
             String viewName = controller.execute(request, response);
-            move(viewName, request, response);
+            if (viewName != null) {
+                move(viewName, request, response);
+            }
         } catch (Throwable e) {
             log.error(e.getMessage());
         }

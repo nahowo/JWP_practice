@@ -1,6 +1,10 @@
-package web_server_launcher.dao;
+package web_server_launcher.jdbc;
 
+import org.springframework.jdbc.core.PreparedStatementCreator;
 import web_server_launcher.core.ConnectionManager;
+import web_server_launcher.jdbc.DataAccessException;
+import web_server_launcher.jdbc.PreparedStatementSetter;
+import web_server_launcher.jdbc.RowMapper;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,6 +26,21 @@ public class JdbcTemplate {
 
     public void update(String sql, Object... parameters) {
         update(sql, createPreparedStatementSetter(parameters));
+    }
+
+    public void update(PreparedStatementCreator psc, KeyHolder keyHolder) {
+        try (Connection conn = ConnectionManager.getConnection()) {
+            PreparedStatement ps = psc.createPreparedStatement(conn);
+            ps.executeUpdate();
+
+            ResultSet rs = ps.getGeneratedKeys();
+            if (rs.next()) {
+                keyHolder.setId(rs.getLong(1));
+            }
+            rs.close();
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
     }
 
     public <T> T queryForObject(String sql, RowMapper<T> rm, PreparedStatementSetter pss) {

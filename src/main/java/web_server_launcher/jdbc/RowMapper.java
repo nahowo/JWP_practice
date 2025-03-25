@@ -1,4 +1,4 @@
-package web_server_launcher.dao;
+package web_server_launcher.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

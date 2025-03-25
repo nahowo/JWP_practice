@@ -1,8 +1,9 @@
 package web_server_launcher.dao;
 
 import web_application_server.model.User;
+import web_server_launcher.jdbc.JdbcTemplate;
+import web_server_launcher.jdbc.RowMapper;
 
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
