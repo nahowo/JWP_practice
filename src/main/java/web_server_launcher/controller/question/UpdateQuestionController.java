@@ -2,12 +2,11 @@ package web_server_launcher.controller.question;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import web_server_launcher.controller.Controller;
-import web_server_launcher.controller.JsonView;
+import web_server_launcher.controller.*;
 
-public class UpdateQuestionController implements Controller {
+public class UpdateQuestionController extends AbstractController {
     @Override
-    public JsonView execute(HttpServletRequest request, HttpServletResponse response) {
-        return new JsonView();
+    public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
+        return jsonView();
     }
 }

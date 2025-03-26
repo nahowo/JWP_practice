@@ -12,13 +12,10 @@ import web_server_launcher.dao.UserDao;
 import java.io.IOException;
 import java.util.List;
 
-public class HomeController implements Controller {
+public class HomeController extends AbstractController {
+    private QuestionDao questionDao = new QuestionDao();
     @Override
-    public JspView execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        UserDao userDao = new UserDao();
-        QuestionDao questionDao = new QuestionDao();
-        request.setAttribute("users", userDao.findAll());
-        request.setAttribute("questions", questionDao.findAll());
-        return new JspView("home.jsp");
+    public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        return jspView("home.jsp").addObject("questions", questionDao.findAll());
     }
 }

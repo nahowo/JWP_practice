@@ -18,7 +18,6 @@ public class ConnectionManager {
 
     public static DataSource getDataSource() {
         BasicDataSource ds = new BasicDataSource();
-        log.info("created getDataSource");
         ds.setDriverClassName(DB_DRIVER);
         ds.setUrl(DB_URL);
         ds.setUsername(DB_USERNAME);

@@ -3,7 +3,7 @@ $(document).ready(function() {
   $(".answerWrite input[type=submit]").click(addAnswer);
 
   function addAnswer(e) {
-    console.log("ajax 실행 성공");
+    console.log("ajax 실행 성공: addAnswer");
     e.preventDefault();
 
     var queryString = $("form[name=answer]").serialize();
@@ -34,6 +34,7 @@ $(document).ready(function() {
   $(".qna-comment").on("click", ".form-delete", deleteAnswer);
 
   function deleteAnswer(e) {
+    console.log("ajax 실행 성공: deleteAnswer");
     e.preventDefault();
 
     var deleteBtn = $(this);
@@ -43,9 +44,9 @@ $(document).ready(function() {
       type: 'post',
       url: "/api/qna/deleteAnswer",
       data: queryString,
-      dataType: 'json',
+      // dataType: 'json',
       error: function (xhr, status) {
-        alert("error");
+        alert("error: " + xhr.responseText);
       },
       success: function (json, status) {
         if (json.status) {

@@ -3,7 +3,7 @@ package web_server_launcher.controller;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-public class ForwardController implements Controller {
+public class ForwardController extends AbstractController {
     private String forwardUrl;
 
     public ForwardController(String forwardUrl) {
@@ -14,7 +14,7 @@ public class ForwardController implements Controller {
     }
 
     @Override
-    public JspView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        return new JspView(forwardUrl);
+    public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        return jspView(forwardUrl);
     }
 }

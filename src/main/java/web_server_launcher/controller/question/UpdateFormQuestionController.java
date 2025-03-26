@@ -2,12 +2,11 @@ package web_server_launcher.controller.question;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import web_server_launcher.controller.Controller;
-import web_server_launcher.controller.JspView;
+import web_server_launcher.controller.*;
 
-public class UpdateFormQuestionController implements Controller {
+public class UpdateFormQuestionController extends AbstractController {
     @Override
-    public JspView execute(HttpServletRequest request, HttpServletResponse response) {
-        return new JspView("");
+    public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) {
+        return jspView("");
     }
 }
