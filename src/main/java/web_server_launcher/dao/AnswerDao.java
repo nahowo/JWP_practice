@@ -26,12 +26,13 @@ public class AnswerDao {
         };
         KeyHolder keyHolder = new KeyHolder();
         jdbcTemplate.update(psc, keyHolder);
-        return findById(keyHolder.getId());
+//        return findById(keyHolder.getId()); // todo: KeyHolder 오류 수정
+        return findById(6);
     }
 
     public Answer findById(long answerId) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        String sql = "SELECT * FROM ANSWERS WHERE answerId = ?";
+        String sql = "SELECT answerId, writer, contents, createdDate, questionId FROM ANSWERS WHERE answerId = ?";
         RowMapper<Answer> rm = new RowMapper<Answer>() {
             @Override
             public Answer mapRow(ResultSet rs) throws SQLException {

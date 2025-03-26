@@ -7,18 +7,21 @@ $(document).ready(function() {
     e.preventDefault();
 
     var queryString = $("form[name=answer]").serialize();
+    console.log("data:", queryString);
 
-    $.ajax({
+    jQuery.ajax({
       type: 'post',
       url: '/api/qna/addAnswer',
       data: queryString,
       dataType: 'json',
+      // contentType: 'application/json;charset=UTF-8',
       error: onError,
       success: onSuccess,
     });
   }
 
   function onSuccess(json, status) {
+    $("form[name=answer]")[0].reset();
     var answerTemplate = $("#answerTemplate").html();
     var template = answerTemplate.format(json.writer, new Date(json.createdDate), json.contents, json.answerId, json.answerId);
     $(".qna-comment-slipp-articles").prepend(template);
