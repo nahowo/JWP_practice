@@ -1,0 +1,25 @@
+package web_server_launcher.controller;
+
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
+
+public class JspView implements View {
+    private String url;
+    public JspView(String url) {
+        this.url = url;
+    }
+    private static final String DEFAULT_REDIRECT_PREFIX = "redirect:";
+    @Override
+    public void render(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (url.startsWith(DEFAULT_REDIRECT_PREFIX)) {
+            response.sendRedirect(url.substring(DEFAULT_REDIRECT_PREFIX.length()));
+            return;
+        }
+        RequestDispatcher rd = request.getRequestDispatcher(url);
+        rd.forward(request, response);
+    }
+}

@@ -14,11 +14,11 @@ import java.util.List;
 
 public class HomeController implements Controller {
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public JspView execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         UserDao userDao = new UserDao();
         QuestionDao questionDao = new QuestionDao();
         request.setAttribute("users", userDao.findAll());
         request.setAttribute("questions", questionDao.findAll());
-        return "home.jsp";
+        return new JspView("home.jsp");
     }
 }

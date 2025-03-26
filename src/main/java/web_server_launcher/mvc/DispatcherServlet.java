@@ -9,6 +9,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import web_server_launcher.controller.Controller;
+import web_server_launcher.controller.View;
 
 import java.io.IOException;
 
@@ -32,13 +33,19 @@ public class DispatcherServlet extends HttpServlet {
 
         Controller controller = rm.findController(requestUrl);
         try {
-            String viewName = controller.execute(request, response);
-            if (viewName != null) {
-                move(viewName, request, response);
-            }
+            View view = controller.execute(request, response);
+            view.render(request, response);
         } catch (Throwable e) {
             log.error(e.getMessage());
         }
+//        try {
+//            String viewName = controller.execute(request, response);
+//            if (viewName != null) {
+//                move(viewName, request, response);
+//            }
+//        } catch (Throwable e) {
+//            log.error(e.getMessage());
+//        }
     }
 
     private void move(String viewName, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
