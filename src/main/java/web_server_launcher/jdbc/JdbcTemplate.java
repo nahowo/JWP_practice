@@ -1,19 +1,16 @@
 package web_server_launcher.jdbc;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import web_server_launcher.core.ConnectionManager;
-import web_server_launcher.jdbc.DataAccessException;
-import web_server_launcher.jdbc.PreparedStatementSetter;
-import web_server_launcher.jdbc.RowMapper;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class JdbcTemplate {
+    public static final Logger log = LoggerFactory.getLogger(JdbcTemplate.class);
     public void update(String sql, PreparedStatementSetter pss) throws DataAccessException {
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -28,16 +25,18 @@ public class JdbcTemplate {
         update(sql, createPreparedStatementSetter(parameters));
     }
 
-    public void update(PreparedStatementCreator psc, KeyHolder keyHolder) {
+    public long update(PreparedStatementCreator psc) {
+        long key = 0L;
         try (Connection conn = ConnectionManager.getConnection()) {
             PreparedStatement ps = psc.createPreparedStatement(conn);
             ps.executeUpdate();
 
             ResultSet rs = ps.getGeneratedKeys();
             if (rs.next()) {
-                keyHolder.setId(rs.getLong(1));
+                key = rs.getLong(1);
             }
             rs.close();
+            return key;
         } catch (SQLException e) {
             throw new DataAccessException(e);
         }
