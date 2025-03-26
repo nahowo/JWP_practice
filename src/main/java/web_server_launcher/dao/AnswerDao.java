@@ -43,7 +43,7 @@ public class AnswerDao {
         return jdbcTemplate.queryForObject(sql, rm, answerId);
     }
 
-    public List<Answer> findAllById(Long questionId) {
+    public List<Answer> findAllById(long questionId) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
         String sql = "SELECT answerId, writer, contents, createdDate, questionId FROM ANSWERS WHERE questionId = ? ORDER BY createdDate DESC";
         RowMapper<Answer> rm = new RowMapper<Answer>() {
@@ -53,5 +53,11 @@ public class AnswerDao {
             }
         };
         return jdbcTemplate.query(sql, rm, questionId);
+    }
+
+    public void delete(long answerId) {
+        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        String sql = "DELETE FROM ANSWERS WHERE answerId = ?";
+        jdbcTemplate.delete(sql, answerId);
     }
 }

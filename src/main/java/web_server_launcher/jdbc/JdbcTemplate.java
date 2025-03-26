@@ -97,4 +97,18 @@ public class JdbcTemplate {
             }
         };
     }
+
+    public void delete(String sql, PreparedStatementSetter pss) throws DataAccessException {
+        try (Connection conn = ConnectionManager.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+            pss.setParameters(pstmt);
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            throw new DataAccessException(e);
+        }
+    }
+
+    public void delete(String sql, Object... parameters) {
+        delete(sql, createPreparedStatementSetter(parameters));
+    }
 }

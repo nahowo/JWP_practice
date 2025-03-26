@@ -5,10 +5,9 @@ import web_application_server.model.Question;
 import web_server_launcher.dao.AnswerDao;
 import web_server_launcher.dao.QuestionDao;
 
-import java.util.Date;
 import java.util.List;
 
-public class QnaControllerTest {
+public class QnaDaoTest {
     @Test
     public void getQuestionTest() {
         QuestionDao questionDao = new QuestionDao();
@@ -41,5 +40,12 @@ public class QnaControllerTest {
 
         Answer actual = answerDao.findById(6L);
         System.out.println("actual = " + actual);
+    }
+
+    @Test
+    public void deleteAnswerTest() {
+        AnswerDao answerDao = new AnswerDao();
+        answerDao.delete(5);
+        Assertions.assertEquals(2, answerDao.findAllById(8).size());
     }
 }
