@@ -10,3 +10,6 @@
 
 ### 7장: DB를 활용해 데이터를 영구적으로 저장하기
 - [실습 문서](https://github.com/nahowo/JWP_practice/blob/main/docs/chapter7.md)
+
+### 8장: AJAX를 활용해 새로고침 없이 데이터 갱신하기
+- [실습 문서](https://github.com/nahowo/JWP_practice/blob/main/docs/chapter8.md)
