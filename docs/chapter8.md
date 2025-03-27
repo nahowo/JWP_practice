@@ -157,11 +157,11 @@ user 로직을 구현했던 방식을 복습하며 질문/답변 게시판을 �
 - 데이터베이스에는 정상 반영되는데 화면상 실제 데이터가 아니라 {1}, {2}, … 형식으로 출력되는 문제가 발생했다.
 - 정상 작동하던 이전 코드
 
-  ![image.png](attachment:c1eed003-e33d-4bd5-aaa9-997fd9c440cc:image.png)
+  <img width="1127" alt="1222" src="https://github.com/user-attachments/assets/ac985187-26cf-4b1a-a98a-4257d19c7ebe" />
 
 - 오류가 발생한 코드
 
-  ![image.png](attachment:9ebc9299-63de-48e3-be6a-952c3d25425e:image.png)
+  <img width="1179" alt="sdf" src="https://github.com/user-attachments/assets/044f084f-9daa-4789-a056-a34c0386c864" />
 
 - answer안에 answer가 중첩으로 들어간다.
 - 중첩을 해결하기 위해 JsonView의 render() 함수를 수정했다.
@@ -199,7 +199,8 @@ user 로직을 구현했던 방식을 복습하며 질문/답변 게시판을 �
 
     - 결과
 
-      ![image.png](attachment:a8a9ae31-fe84-486f-a5cf-163570d5fc46:image.png)
+      <img width="1111" alt="dfg" src="https://github.com/user-attachments/assets/425c7509-cc60-4581-803e-adf1fce4f7f7" />
+
 
 
 ### /api/qna/deleteAnswer AJAX 오류 문제
@@ -207,7 +208,8 @@ user 로직을 구현했던 방식을 복습하며 질문/답변 게시판을 �
 - addAnswer과 동일하게 데이터베이스에서는 삭제되는데 error alert가 뜨고 새로고침 전에는 화면이 변하지 않는 문제가 발생했다.
 - 기존 결과
 
-  ![image.png](attachment:6f2ce6c1-f769-4442-890f-1ff557983e1a:image.png)
+  <img width="648" alt="sfsss" src="https://github.com/user-attachments/assets/b36b6d51-892c-41bf-b0cd-3bdf2ccffca5" />
+
 
 - 동일한 json 중첩 문제가 발생했고 동일한 해결 방법으로 해결했다.
 
