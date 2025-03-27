@@ -5,14 +5,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import web_application_server.model.Question;
 import web_application_server.model.User;
-import web_server_launcher.controller.*;
+import web_server_launcher.controller.AbstractController;
+import web_server_launcher.controller.ModelAndView;
 import web_server_launcher.controller.userController.UserSessionUtils;
 import web_server_launcher.dao.QuestionDao;
-import web_server_launcher.dao.UserDao;
 
 import java.io.IOException;
 
-public class CreateQuestionController extends AbstractController {
+public class QuestionFormController extends AbstractController {
     private QuestionDao questionDao = new QuestionDao();
     @Override
     public ModelAndView execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,9 +20,6 @@ public class CreateQuestionController extends AbstractController {
         if (user == null) {
             return jspView("redirect:/user/loginForm");
         }
-        Question question = new Question(user.getUserId(), request.getParameter("title"), request.getParameter("contents"));
-        questionDao.insert(question);
-
-        return jspView("redirect:/").addObject("questions", questionDao.findAll());
+        return jspView("/qna/form.jsp");
     }
 }
