@@ -1,4 +1,4 @@
-package web_server_launcher.mvc;
+package web_server_launcher.core.filter;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebFilter;
