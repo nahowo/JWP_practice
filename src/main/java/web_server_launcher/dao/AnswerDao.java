@@ -14,11 +14,11 @@ public class AnswerDao {
     public static final Logger log = LoggerFactory.getLogger(AnswerDao.class);
     public Answer insert(Answer answer) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        String sql = "INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES (?, ?, ?, ?)";
+        String sql1 = "INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES (?, ?, ?, ?)";
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
             public PreparedStatement createPreparedStatement(Connection con) throws SQLException {
-                PreparedStatement pstmt = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+                PreparedStatement pstmt = con.prepareStatement(sql1, Statement.RETURN_GENERATED_KEYS);
                 pstmt.setString(1, answer.getWriter());
                 pstmt.setString(2, answer.getContents());
                 pstmt.setTimestamp(3, new Timestamp(answer.getTimeFromCreateDate()));
@@ -26,6 +26,8 @@ public class AnswerDao {
                 return pstmt;
             }
         };
+        String sql2 = "UPDATE QUESTIONS SET countOfAnswer = QUESTIONS.countOfAnswer + 1 WHERE questionId = ?";
+        jdbcTemplate.update(sql2, answer.getQuestionId());
         long key = jdbcTemplate.update(psc);
         return findById(key);
     }
@@ -57,7 +59,10 @@ public class AnswerDao {
 
     public void delete(long answerId) {
         JdbcTemplate jdbcTemplate = new JdbcTemplate();
-        String sql = "DELETE FROM ANSWERS WHERE answerId = ?";
-        jdbcTemplate.delete(sql, answerId);
+        String sql1 = "DELETE FROM ANSWERS WHERE answerId = ?";
+        long questionId = findById(answerId).getQuestionId();
+        jdbcTemplate.delete(sql1, answerId);
+        String sql2 = "UPDATE QUESTIONS SET countOfAnswer = QUESTIONS.countOfAnswer - 1 WHERE questionId = ?";
+        jdbcTemplate.update(sql2, questionId);
     }
 }
