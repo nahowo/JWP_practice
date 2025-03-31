@@ -16,8 +16,9 @@ public class JsonView implements View {
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=UTF-8");
         PrintWriter out = response.getWriter();
-        for (String key : model.keySet()) {
-            out.print(mapper.writeValueAsString(model.get(key)));
-        }
+        out.print(mapper.writeValueAsString(model));
+//        for (String key : model.keySet()) {
+//            out.print(mapper.writeValueAsString(model.get(key)));
+//        }
     }
 }

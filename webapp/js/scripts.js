@@ -21,9 +21,12 @@ $(document).ready(function() {
   }
 
   function onSuccess(json, status) {
+    console.log("addAnswer 성공!");
+    console.log("data:", json);
     $("form[name=answer]")[0].reset();
+    var answerData = json.answer[0];
     var answerTemplate = $("#answerTemplate").html();
-    var template = answerTemplate.format(json.writer, new Date(json.createdDate), json.contents, json.answerId, json.answerId);
+    var template = answerTemplate.format(answerData.writer, new Date(answerData.createdDate), answerData.contents, answerData.answerId, answerData.answerId);
     $(".qna-comment-slipp-articles").prepend(template);
   }
 
@@ -49,7 +52,10 @@ $(document).ready(function() {
         alert("error: " + xhr.responseText);
       },
       success: function (json, status) {
-        if (json.status) {
+        console.log("deleteAnswer 성공!")
+        console.log("json:", json);
+        if (json.result.status) {
+          console.log("정상 응답 완료!");
           deleteBtn.closest('article').remove();
         }
       }

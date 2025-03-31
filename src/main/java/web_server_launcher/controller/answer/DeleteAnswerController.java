@@ -18,6 +18,6 @@ public class DeleteAnswerController extends AbstractController {
         AnswerDao answerDao = new AnswerDao();
         answerDao.delete(answerId);
 
-        return jsonView().addObject("", Result.ok());
+        return jsonView().addObject("result", Result.ok());
     }
 }
