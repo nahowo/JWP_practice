@@ -6,6 +6,7 @@ import web_server_launcher.controller.*;
 import web_server_launcher.controller.answer.AddAnswerController;
 import web_server_launcher.controller.answer.DeleteAnswerController;
 import web_server_launcher.controller.question.CreateQuestionController;
+import web_server_launcher.controller.question.ListQuestionController;
 import web_server_launcher.controller.question.QuestionFormController;
 import web_server_launcher.controller.question.ShowController;
 import web_server_launcher.controller.userController.*;
@@ -33,6 +34,7 @@ public class RequestMapping {
         mappings.put("/api/qna/deleteAnswer", new DeleteAnswerController());
         mappings.put("/qna/form", new QuestionFormController());
         mappings.put("/qna/create", new CreateQuestionController());
+        mappings.put("/api/qna/list", new ListQuestionController());
 
         log.info("Initialized Request Mapping!");
     }
