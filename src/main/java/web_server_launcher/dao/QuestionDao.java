@@ -39,6 +39,12 @@ public class QuestionDao {
         jdbcTemplate.update(sql, title, contents, questionId);
     }
 
+    public void delete(long questionId) {
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
+        String sql = "DELETE FROM QUESTIONS WHERE questionId = ?";
+        jdbcTemplate.delete(sql, questionId);
+    }
+
     public Question findById(Long questionId) {
         jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT questionId, writer, title, contents, createdDate, countOfAnswer FROM QUESTIONS WHERE questionId = ?";
