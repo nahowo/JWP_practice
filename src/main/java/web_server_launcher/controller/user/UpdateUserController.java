@@ -1,4 +1,4 @@
-package web_server_launcher.controller.userController;
+package web_server_launcher.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -10,7 +10,6 @@ import web_server_launcher.controller.*;
 import web_server_launcher.dao.UserDao;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class UpdateUserController extends AbstractController {
     public static final Logger log = LoggerFactory.getLogger(UpdateUserController.class);

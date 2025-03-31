@@ -89,9 +89,6 @@
                             <c:when test="${user.userId eq loginedUser.userId}">
                                 <td><a href="/user/updateForm" class="btn btn-success" role="button">수정</a></td>
                             </c:when>
-<%--                            <c:otherwise>--%>
-<%--                                <td></td>  <!-- 빈 칸 추가 -->--%>
-<%--                            </c:otherwise>--%>
                         </c:choose>
                     </tr>
                 </c:forEach>

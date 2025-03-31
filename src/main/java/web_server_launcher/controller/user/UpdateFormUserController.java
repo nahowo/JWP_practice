@@ -1,4 +1,4 @@
-package web_server_launcher.controller.userController;
+package web_server_launcher.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

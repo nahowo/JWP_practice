@@ -1,4 +1,4 @@
-package web_server_launcher.controller.userController;
+package web_server_launcher.controller.user;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -9,7 +9,6 @@ import web_server_launcher.controller.*;
 import web_server_launcher.dao.UserDao;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 public class ListUserController extends AbstractController {
     public static final Logger log = LoggerFactory.getLogger(ListUserController.class);
@@ -18,8 +17,7 @@ public class ListUserController extends AbstractController {
         if (!UserSessionUtils.isLogined(request.getSession())) {
             return jspView("redirect:/user/loginForm");
         }
-        request.setAttribute("loginedUser", UserSessionUtils.getUserFromSession(request.getSession()));
         UserDao userDao = new UserDao();
-        return jspView("/user/list.jsp").addObject("users", userDao.findAll());
+        return jspView("/user/list.jsp").addObject("users", userDao.findAll()).addObject("loginedUser", UserSessionUtils.getUserFromSession(request.getSession()));
     }
 }

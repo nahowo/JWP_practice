@@ -5,11 +5,8 @@ import org.slf4j.LoggerFactory;
 import web_server_launcher.controller.*;
 import web_server_launcher.controller.answer.AddAnswerController;
 import web_server_launcher.controller.answer.DeleteAnswerController;
-import web_server_launcher.controller.question.CreateQuestionController;
-import web_server_launcher.controller.question.ListQuestionController;
-import web_server_launcher.controller.question.QuestionFormController;
-import web_server_launcher.controller.question.ShowController;
-import web_server_launcher.controller.userController.*;
+import web_server_launcher.controller.question.*;
+import web_server_launcher.controller.user.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,6 +32,8 @@ public class RequestMapping {
         mappings.put("/qna/form", new QuestionFormController());
         mappings.put("/qna/create", new CreateQuestionController());
         mappings.put("/api/qna/list", new ListQuestionController());
+        mappings.put("/qna/update", new UpdateQuestionController());
+        mappings.put("/qna/updateForm", new UpdateFormQuestionController());
 
         log.info("Initialized Request Mapping!");
     }
