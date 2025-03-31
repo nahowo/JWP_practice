@@ -12,8 +12,9 @@ import java.util.List;
 
 public class AnswerDao {
     public static final Logger log = LoggerFactory.getLogger(AnswerDao.class);
+    private JdbcTemplate jdbcTemplate;
     public Answer insert(Answer answer) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql1 = "INSERT INTO ANSWERS (writer, contents, createdDate, questionId) VALUES (?, ?, ?, ?)";
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
@@ -33,7 +34,7 @@ public class AnswerDao {
     }
 
     public Answer findById(long answerId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT answerId, writer, contents, createdDate, questionId FROM ANSWERS WHERE answerId = ?";
         RowMapper<Answer> rm = new RowMapper<Answer>() {
             @Override
@@ -46,7 +47,7 @@ public class AnswerDao {
     }
 
     public List<Answer> findAllById(long questionId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT answerId, writer, contents, createdDate, questionId FROM ANSWERS WHERE questionId = ? ORDER BY createdDate DESC";
         RowMapper<Answer> rm = new RowMapper<Answer>() {
             @Override
@@ -58,7 +59,7 @@ public class AnswerDao {
     }
 
     public void delete(long answerId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql1 = "DELETE FROM ANSWERS WHERE answerId = ?";
         long questionId = findById(answerId).getQuestionId();
         jdbcTemplate.delete(sql1, answerId);

@@ -11,6 +11,16 @@ import java.util.List;
 
 public class JdbcTemplate {
     public static final Logger log = LoggerFactory.getLogger(JdbcTemplate.class);
+    private static JdbcTemplate jdbcTemplate;
+
+    private JdbcTemplate() {}
+    public static JdbcTemplate getJdbcTemplate() {
+        if (jdbcTemplate == null) {
+            jdbcTemplate = new JdbcTemplate();
+        }
+        return jdbcTemplate;
+    }
+
     public void update(String sql, PreparedStatementSetter pss) throws DataAccessException {
         try (Connection conn = ConnectionManager.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {

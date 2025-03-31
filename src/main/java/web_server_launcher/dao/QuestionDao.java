@@ -12,8 +12,9 @@ import java.util.List;
 
 public class QuestionDao {
     private static Logger log = LoggerFactory.getLogger(QuestionDao.class);
+    private JdbcTemplate jdbcTemplate;
     public void insert(Question question) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "INSERT INTO QUESTIONS (writer, title, contents, createdDate, countOfAnswer) VALUES (?, ?, ?, ?, ?)";
         PreparedStatementCreator psc = new PreparedStatementCreator() {
             @Override
@@ -33,13 +34,13 @@ public class QuestionDao {
     }
 
     public void update(String title, String contents, long questionId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "UPDATE QUESTIONS SET title = ?, contents = ? WHERE questionId = ?";
         jdbcTemplate.update(sql, title, contents, questionId);
     }
 
     public Question findById(Long questionId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT questionId, writer, title, contents, createdDate, countOfAnswer FROM QUESTIONS WHERE questionId = ?";
         RowMapper<Question> rm = new RowMapper<Question>() {
             @Override
@@ -51,7 +52,7 @@ public class QuestionDao {
     }
 
     public List<Question> findAll() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT questionId, writer, title, contents, createdDate, countOfAnswer FROM QUESTIONS ORDER BY createdDate";
         RowMapper<Question> rm = new RowMapper<Question>() {
             @Override

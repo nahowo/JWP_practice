@@ -9,20 +9,21 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserDao {
+    private JdbcTemplate jdbcTemplate;
     public void insert(User user) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "INSERT INTO USERS VALUES (?, ?, ?, ?)";
         jdbcTemplate.update(sql, user.getUserId(), user.getPassword(), user.getName(), user.getEmail());
     }
 
     public void update(User user) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "UPDATE USERS SET password = ?, name = ?, email = ? WHERE userId = ?";
         jdbcTemplate.update(sql, user.getPassword(), user.getName(), user.getEmail(), user.getUserId());
     }
 
     public User findByUserId(String userId) {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT userId, password, name, email FROM USERS WHERE userId = ?";
         RowMapper<User> rm = new RowMapper<User>() {
             @Override
@@ -34,7 +35,7 @@ public class UserDao {
     }
 
     public List<User> findAll() {
-        JdbcTemplate jdbcTemplate = new JdbcTemplate();
+        jdbcTemplate = JdbcTemplate.getJdbcTemplate();
         String sql = "SELECT userId, password, name, email FROM USERS";
         RowMapper<User> rowMapper = new RowMapper<User>() {
             @Override
