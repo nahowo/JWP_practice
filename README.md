@@ -13,3 +13,6 @@
 
 ### 8장: AJAX를 활용해 새로고침 없이 데이터 갱신하기
 - [실습 문서](https://github.com/nahowo/JWP_practice/blob/main/docs/chapter8.md)
+
+### 9장: 두 번째 양파 껍질을 벗기기 위한 중간 점검
+- [실습 문서](https://github.com/nahowo/JWP_practice/blob/main/docs/chapter9.md)
