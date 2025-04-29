@@ -178,6 +178,43 @@
 
 > @Controller, 자바 리플렉션 활용
 >
+- [자바 강의](https://github.com/nahowo/java-lecture/blob/main/source/src/java_adv2/README.md#%EC%84%B9%EC%85%98-13-%EB%A6%AC%ED%94%8C%EB%A0%89%EC%85%98)에서 실습했던 내용을 바탕으로 컨트롤러 매핑을 수행하기로 했다.
+- 직접 @Mapping 어노테이션을 만들어서 적용한다. 
+
+### @Mapping 어노테이션 작성
+
+- String value()를 가지는 어노테이션 인터페이스를 작성한다.
+- @Retention(RetentionPolicy.RUNTIME)을 통해 런타임에도 어노테이션이 남아있도록 설정한다.
+- @Target(ElementType.METHOD)를 통해 어노테이션이 메서드에 적용됨을 명시한다.
+
+### @Mapping을 처리하는 로직 작성 - RequestMapping에 추가
+
+- 작성하기 이전에 컨트롤러가 기능별로 분산되어 있어 도메인 별로 통합하는 것이 필요하다고 생각했다.
+  - 기존 방식은 기능별 컨트롤러 클래스를 작성하고, 각 클래스의 execute() 메서드를 호출하는 방식이다.
+  - 자바 강의에서 실습했던 내용은 도메인 별 클래스를 작성하고, 각 메서드를 url에 매핑해 사용하는 방식이다.
+  - 후자가 코드 중복도 줄이고 리플렉션을 제대로 활용하는 방식이라고 생각해 선택했다.
+
+### 컨트롤러 수정
+
+- 도메인마다 하나의 컨트롤러를 가지고, `execute()` 메서드 대신 기능별 메서드를 가지도록 수정했다.
+- execute() 메서드의 파라미터도 request, response를 고정으로 가지지 않고 필요한 파라미터만 가지도록 수정했다(동적 바인딩 참고).
+- 더이상 Controller 인터페이스의 `execute()` 메서드를 오버라이드하지 않기 때문에 제거했다.
+
+### DispatcherServlet 초기화 로직 수정
+
+- 기존의 컨트롤러 수동 등록 로직을 수행하던 DispatcherServlet의 `init()` 메서드를 수정한다.
+  - RequestMapping의 `initMapping()` 메서드에서 단순히 Map에 url과 컨트롤러를 직접 작성하는 게 아니라 리플렉션을 이용해 컨트롤러 메서드와 url을 매핑하도록 변경한다.
+
+### DispatcherServlet의 컨트롤러 호출 방식 수정
+
+- 기존 방식은 RequestMapping에서 매칭되는 컨트롤러를 찾고 그 컨트롤러의 `execute()` 메서드를 호출하는 방식이다.
+- 기존 방식의 문제점은 `execute()` 메서드가 Controller 인터페이스의 구현으로 오버라이드하기 때문에 파라미터가 고정되고(필요하지 않은 request, response를 전달), 각 기능별 컨트롤러를 작성해야 한다는 것이다.
+- 1번 문제를 해결하기 위해 메서드별 인자 동적 바인딩을 사용할 수 있다.
+- 2번 문제를 해결하기 위해 도메인별 컨트롤러를 작성하고, url에 컨트롤러가 아닌 메서드 + 컨트롤러 객체인 ControllerMethod를 매칭하도록 할 수 있다.
+
+### Method.invoke()의 반환값 관련 문제
+
+- 기존의 MVC 패턴에서 메서드 반환값을 ModelAndView로 통일했다. Method.invoke()의 반환값은 Object이기 때문에 DispatcherServlet에서 처리하기 위해서는 (ModelAndView) 를 사용해 반환값을 형변환해야 한다.
 
 ---
 

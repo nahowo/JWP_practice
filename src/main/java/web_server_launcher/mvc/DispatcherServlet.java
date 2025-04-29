@@ -1,6 +1,5 @@
 package web_server_launcher.mvc;
 
-import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -8,11 +7,12 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import web_server_launcher.controller.Controller;
-import web_server_launcher.controller.ModelAndView;
-import web_server_launcher.controller.View;
+import web_server_launcher.controller.view.ModelAndView;
+import web_server_launcher.controller.view.View;
 
 import java.io.IOException;
+
+import static web_server_launcher.mvc.RequestMapping.*;
 
 @WebServlet(name = "dispatcher", urlPatterns = "/", loadOnStartup = 1)
 public class DispatcherServlet extends HttpServlet {
@@ -32,12 +32,12 @@ public class DispatcherServlet extends HttpServlet {
         String requestUrl = request.getRequestURI();
         log.debug("Method: {}, RequestURI: {}", request.getMethod(), requestUrl);
 
-        Controller controller = rm.findController(requestUrl);
         try {
-            ModelAndView mv = controller.execute(request, response);
+            ControllerMethod controller = rm.findController(requestUrl);
+            ModelAndView mv = controller.invoke(request, response);
             View view = mv.getView();
             view.render(mv.getModel(), request, response);
-        } catch (Throwable e) {
+        } catch (Exception e) {
             log.error(e.getMessage());
         }
     }

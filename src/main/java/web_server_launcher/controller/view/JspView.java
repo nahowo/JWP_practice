@@ -1,4 +1,4 @@
-package web_server_launcher.controller;
+package web_server_launcher.controller.view;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;

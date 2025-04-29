@@ -1,4 +1,4 @@
-package web_server_launcher.controller.user;
+package web_server_launcher.controller.util;
 
 import web_application_server.model.User;
 
